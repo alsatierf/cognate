@@ -1,0 +1,17 @@
+---
+provider: "virtualbox"
+hosts:
+  - name: node1
+    ip: 100.100.100.100
+    box: centos/7
+    ansible_playbook: provisioning/playbook.yml
+    ansible_inventory: ansible_inventory.yml
+    memory: 4096
+    cpus: 2
+  - name: node2
+    ip: 100.100.100.101
+    box: centos/7
+    ansible_playbook: provisioning/playbook.yml
+    ansible_inventory: ansible_inventory.yml
+    memory: 2048
+    cpus: 1

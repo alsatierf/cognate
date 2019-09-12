@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: "Debugging....."
+    debug:
+      msg: "{{ inventory_hostname }}: IP {{ ansible_ssh_host }}"
