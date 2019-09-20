@@ -20,6 +20,7 @@ Vagrant.configure(2) do |config|
         provider.cpus = node["cpus"]
       end
       machine.vm.provision :ansible do |ansible|
+	ansible.compatibility_mode = "2.0"
         ansible.inventory_path = node["ansible_inventory"]
         ansible.playbook = node["ansible_playbook"]
       end
