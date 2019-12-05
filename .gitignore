@@ -1,3 +1,8 @@
 .vagrant
 *.log
 .DS_Store
+provisioning/*
+!provisioning/example/
+vagrant_inventory/*
+!vagrant_inventory/*.example
+!vagrant_inventory/*.template
