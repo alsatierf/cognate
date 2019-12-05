@@ -1,0 +1,23 @@
+---
+provider: "virtualbox"
+hosts:
+- name: # Instance name
+  ip: # Instance IP
+  box: # Vagrant box name
+  box_version: # Vagrant box version
+  ansible_config_file: # Ansible config file path used by Vagrant to provision the VM
+  ansible_playbook: # Ansible playbook file path used to provision the VM
+  ansible_inventory: # Anbile inventory file path used to provision the VM
+  memory: # Memory (in MB)
+  cpus: # CPU count (in units)
+  synced_folders: # Rsync and NFS protocols used for data sharing
+  - src: # Host's rsync path
+    dest: # Guest's rsync mount point
+    type: rsync
+    disabled: true
+  - src: # Host's NFS mount point
+    dest: # Guest's NFS mount point
+    type: nfs
+    nfs_version: 4
+    nfs_udp: false
+    disabled: false

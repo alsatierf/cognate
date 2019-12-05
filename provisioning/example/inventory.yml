@@ -1,0 +1,7 @@
+---
+all:
+  hosts:
+    node_01:
+      ansible_ssh_host: 192.168.10.10
+    node_02:
+      ansible_ssh_host: 192.168.10.11

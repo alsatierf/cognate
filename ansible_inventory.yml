@@ -1,5 +1,0 @@
----
-all:
-  hosts:
-    node_01:
-      ansible_ssh_host: 100.100.100.100

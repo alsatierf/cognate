@@ -1,0 +1,27 @@
+---
+provider: "virtualbox"
+hosts:
+- name: node_01 # Instance name
+  ip: 192.168.10.10 # Instance IP
+  box: ubuntu/bionic64 # Vagrant box name
+  box_version: 20191125.0.0 # Vagrant box version
+  ansible_config_file: provisioning/example/ansible.cfg # Ansible config file path used by Vagrant to provision the VM
+  ansible_playbook: provisioning/example/main.yml # Ansible playbook file path used to provision the VM
+  ansible_inventory: provisioning/example/inventory.yml # Anbile inventory file path used to provision the VM
+  memory: 512 # Memory (in MB)
+  cpus: 1 # CPU count (in units)
+  synced_folders: # Rsync and NFS protocols used for data sharing
+  - src: .
+    dest: /vagrant
+    type: rsync
+    disabled: true
+- name: node_02 # Instance name
+  ip: 192.168.10.11 # Instance IP
+  box: ubuntu/bionic64 # Vagrant box name
+  box_version: 20191125.0.0 # Vagrant box version
+  ansible_config_file: provisioning/example/ansible.cfg # Ansible config file path used by Vagrant to provision the VM
+  ansible_playbook: provisioning/example/main.yml # Ansible playbook file path used to provision the VM
+  ansible_inventory: provisioning/example/inventory.yml # Anbile inventory file path used to provision the VM
+  memory: 512 # Memory (in MB)
+  cpus: 1 # CPU count (in units)
+  synced_folders: [] # Rsync and NFS protocols used for data sharing
