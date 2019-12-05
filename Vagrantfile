@@ -17,9 +17,9 @@ VAGRANT_INVENTORY_PATH = "vagrant_inventory"
         machine.vm.box_check_update = false
         machine.vm.network "private_network", ip: node["ip"]
         node["synced_folders"].each do |folder|
-    if folder["type"] == "rsync"
+          if folder["type"] == "rsync"
             config.vm.synced_folder folder["src"], folder["dest"], type: folder["type"], disabled: folder["disabled"]
-    elsif folder["type"] == "nfs"
+          elsif folder["type"] == "nfs"
             config.vm.synced_folder folder["src"], folder["dest"], type: folder["type"], nfs_version: folder["nfs_version"], nfs_udp: folder["nfs_udp"], disabled: folder["disabled"]
           end
         end
