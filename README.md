@@ -35,7 +35,7 @@ This module relies on the presence of Vagrant and Virtualbox on the machine wher
 
 The code in the [Vagrantfile](Vagrantfile) *iterates sequentially* over all files ended in \*.yml and \*.yaml in [vagrant_inventory](vagrant_inventory) folder and, *for each VM declaration*, provides it with Virtualbox using the specified `name`, `ip`, `cpus`, `memory`, `box`, `box_version` and `synced_folders` arguments. At the provisioning step (last step executed after VM creation), vagrant will provision the VM with Ansible using the `ansible_config_file`, `ansible_playbook` and `ansible_inventory` file path arguments.
 
-> One key point to notice is that **both** `name` **and** `ip` **arguments** in a vagrant_inventory/\*.yml file **must match the corresponding host and ip** Ansible arguments the corresponding `ansible_playbook` parameter points to. In order to figure out how this works in practice, please check how the two `ip` and `name` parametes on file vagrant_inventory/hosts.yml.example relate to `hosts` and `ansible_ssh_host` parameters on example/inventory.yml on the [Providing and Provisioning Example](#providing-and-provisioning-example).
+> One key point to notice is that **both** `name` **and** `ip` **arguments** in a vagrant_inventory/\*.yml file **must match the corresponding host and ip** Ansible arguments the corresponding `ansible_playbook` parameter points to. In order to figure out how this works in practice, please check how the two `ip` and `name` parametes on file vagrant_inventory/hosts.yml.example relate to `hosts` and `ansible_ssh_host` parameters on example/inventory.yml on the [Providing and Provisioning Example](#quick-virtual-machine-providing-and-provisioning-example).
 
 ## Further Usage
 
