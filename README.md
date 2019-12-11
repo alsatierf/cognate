@@ -44,14 +44,14 @@ The code in the [Vagrantfile](Vagrantfile) *iterates sequentially* over all file
 One effective way of using this framework for developing, prototyping and testing is to follow these steps:
 
 1. Clone this repository (if you didn't do that up to this moment) and enter the project root folder:
-```bash
-$ git clone https://github.com/alsfreitaz/cognate.git
-$ cd cognate
-```
-1. Create a folder under the [provisioning](provisioning) folder
-1. Create or drop existing Ansible files (specially ansible.cfg, playbooks and inventories) under the new folder and assign some hostnames and IP addresses in a private range.
-1. Create a \*.yaml or \*.yml file under [vagrant_inventory](vagrant_inventory) using the [template file](vagrant_inventory/hosts.yml.template) or the [example file](vagrant_inventory/hosts.yml.example) as reference and point the correct `name` and `ip` paramentes to the corresponding hostnames and IPs in the inventory from step 2
-1. Run `vagrant up` on this project root folder to provide and provision all machines.
+    ```bash
+    $ git clone https://github.com/alsfreitaz/cognate.git
+    $ cd cognate
+    ```
+2. Create a folder under the [provisioning](provisioning) folder
+3. Create or drop existing Ansible files (specially ansible.cfg, playbooks and inventories) under the new folder and assign some hostnames and IP addresses in a private range.
+4. Create a \*.yaml or \*.yml file under [vagrant_inventory](vagrant_inventory) using the [template file](vagrant_inventory/hosts.yml.template) or the [example file](vagrant_inventory/hosts.yml.example) as reference and point the correct `name` and `ip` paramentes to the corresponding hostnames and IPs in the inventory from step 2
+5. Run `vagrant up` on this project root folder to provide and provision all machines.
 
 > Obs: After providing a MV, if something goes wrong at the provisioning step (automatically executed by the command `vagrant up` when the machine is created the first time) or if you just want to run the provisioning step without having to destroy and recreate the machine(s), just run the command `vagrant provision <vm_name>` to provision a specific machine or `vagrant provision` to provision all machines with status `created` in vagrant.
 
