@@ -44,10 +44,12 @@ The code in the [Vagrantfile](Vagrantfile) *iterates sequentially* over all file
 One effective way of using this framework for developing, prototyping and testing is to follow these steps:
 
 1. Clone this repository (if you didn't do that up to this moment) and enter the project root folder:
+
     ```bash
     $ git clone https://github.com/alsfreitaz/cognate.git
     $ cd cognate
     ```
+    
 2. Create a folder under the [provisioning](provisioning) folder
 3. Create or drop existing Ansible files (specially ansible.cfg, playbooks and inventories) under the new folder and assign some hostnames and IP addresses in a private range.
 4. Create a \*.yaml or \*.yml file under [vagrant_inventory](vagrant_inventory) using the [template file](vagrant_inventory/hosts.yml.template) or the [example file](vagrant_inventory/hosts.yml.example) as reference and point the correct `name` and `ip` paramentes to the corresponding hostnames and IPs in the inventory from step 2
