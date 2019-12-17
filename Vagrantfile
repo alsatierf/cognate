@@ -4,7 +4,7 @@
 
 require 'yaml'
 
-VAGRANT_INVENTORY_PATH = "vagrant_inventory"
+VAGRANT_INVENTORY_PATH = "inventory"
 
 (Dir.glob("#{VAGRANT_INVENTORY_PATH}/*.yml") + Dir.glob("#{VAGRANT_INVENTORY_PATH}/*.yaml")).each do | vagrant_hosts_file |
   # Load settings from the Vagrant inventory file
